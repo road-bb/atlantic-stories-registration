@@ -1,269 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atlantic Stories — Register to Attend</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stay Connected — R.O.A.D. at UNITE 2026</title>
+<meta name="description" content="Share your details with the Reclaiming Our Atlantic Destiny Programme at UNCF UNITE 2026, Atlanta.">
+<meta name="robots" content="noindex">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap');
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --ink: #1a1410; --cream: #faf7f2; --parchment: #f2ede3;
-    --teal: #1d6b6b; --teal-deep: #144e4e;
-    --gold: #c8963a; --gold-light: #e4b86a;
-    --rust: #8b3a2a; --muted: #6b6058; --soft: #8a7f74; --rule: #d4c9b8;
+  /* ---------- Brand typefaces ----------
+     Place licensed webfont files in /fonts/ with these exact names,
+     or edit the src paths below to match your files. */
+  @font-face{
+    font-family:'Season Mix';
+    src:url('fonts/SeasonMix-Regular.woff2') format('woff2'),
+        url('fonts/SeasonMix-Regular.woff') format('woff');
+    font-weight:400; font-style:normal; font-display:swap;
   }
-  body {
-    background: var(--parchment); font-family: 'Barlow', sans-serif;
-    color: var(--ink); min-height: 100vh;
-    display: flex; justify-content: center; padding: 0;
+  @font-face{
+    font-family:'Season Mix';
+    src:url('fonts/SeasonMix-Medium.woff2') format('woff2'),
+        url('fonts/SeasonMix-Medium.woff') format('woff');
+    font-weight:500; font-style:normal; font-display:swap;
   }
-  .card {
-    width: 100%; max-width: 620px; background: var(--cream);
-    min-height: 100vh; display: flex; flex-direction: column;
+  @font-face{
+    font-family:'Season Sans';
+    src:url('fonts/SeasonSans-Regular.woff2') format('woff2'),
+        url('fonts/SeasonSans-Regular.woff') format('woff');
+    font-weight:400; font-style:normal; font-display:swap;
   }
-  .header {
-    background: var(--teal-deep); padding: 32px 36px 28px;
-    position: relative; overflow: hidden;
+  @font-face{
+    font-family:'Season Sans';
+    src:url('fonts/SeasonSans-Medium.woff2') format('woff2'),
+        url('fonts/SeasonSans-Medium.woff') format('woff');
+    font-weight:500; font-style:normal; font-display:swap;
   }
-  .header::before {
-    content: ''; position: absolute; top: -40px; right: -40px;
-    width: 180px; height: 180px; border-radius: 50%;
-    border: 1px solid rgba(200,150,58,0.2);
+  @font-face{
+    font-family:'Season Sans';
+    src:url('fonts/SeasonSans-Bold.woff2') format('woff2'),
+        url('fonts/SeasonSans-Bold.woff') format('woff');
+    font-weight:700; font-style:normal; font-display:swap;
   }
-  .header::after {
-    content: ''; position: absolute; top: -20px; right: -20px;
-    width: 120px; height: 120px; border-radius: 50%;
-    border: 1px solid rgba(200,150,58,0.12);
+
+  :root{
+    --black:#000000;
+    --off-black:#141414;
+    --grey-dark:#555555;
+    --grey:#8A8A8A;
+    --grey-line:#D6D6D6;
+    --grey-bg:#F2F2F2;
+    --white:#FFFFFF;
+    --display:'Season Mix', Georgia, 'Times New Roman', serif;
+    --body:'Season Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    --radius:0px;
   }
-  .header-logos {
-    position: absolute; top: 20px; right: 24px;
-    display: flex; flex-direction: row;
-    align-items: center; gap: 14px; z-index: 2;
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--grey-bg);
+    color:var(--black);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.5;
+    min-height:100vh;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding:32px 20px 64px;
   }
-  .logo-road { width: 68px; opacity: 0.95; }
-  .logo-soe  { width: 62px; border-radius: 50%; display: block; }
-  .header-label {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 10px;
-    font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--gold-light); margin-bottom: 10px;
+  .card{
+    width:100%;
+    max-width:560px;
+    background:var(--white);
+    border:1px solid var(--grey-line);
   }
-  .header h1 {
-    font-family: 'Cormorant Garamond', serif; font-size: 38px;
-    font-weight: 500; font-style: italic; color: #fff;
-    line-height: 1.05; margin-bottom: 6px;
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    background:var(--black);
+    color:var(--white);
+    padding:36px 36px 32px;
   }
-  .header h1 span { color: var(--gold-light); }
-  .header .subtitle {
-    font-size: 13px; color: rgba(255,255,255,0.65);
-    font-weight: 300; margin-bottom: 20px;
+  .masthead .logo{
+    display:block;
+    width:100%;
+    max-width:264px;
+    height:auto;
+    margin-bottom:20px;
   }
-  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-  .pill {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 11px;
-    font-weight: 600; letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 2px;
+  .rule{
+    height:1px;
+    background:rgba(255,255,255,.28);
+    margin:14px 0 24px;
   }
-  .spots-banner {
-    background: rgba(200,150,58,0.15); border: 1px solid rgba(200,150,58,0.35);
-    padding: 10px 14px; font-size: 12.5px; color: var(--gold-light); line-height: 1.5;
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.6);
+    font-weight:500;
   }
-  .spots-banner strong { font-weight: 600; }
-  .body { padding: 28px 36px 12px; flex: 1; }
-  .section { margin-bottom: 24px; }
-  .sec-label {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 10px;
-    font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 14px; padding-bottom: 8px;
-    border-bottom: 1px solid var(--rule);
+  .session{
+    font-family:var(--display);
+    font-size:clamp(24px,5.4vw,32px);
+    line-height:1.2;
+    font-weight:500;
   }
-  .row { display: grid; gap: 14px; margin-bottom: 14px; }
-  .row.two { grid-template-columns: 1fr 1fr; }
-  .field { display: flex; flex-direction: column; gap: 5px; }
-  .field label { font-size: 11.5px; font-weight: 600; color: var(--ink); letter-spacing: 0.03em; }
-  .field label .opt { font-weight: 400; color: var(--soft); margin-left: 4px; }
-  .field input, .field select, .field textarea {
-    font-family: 'Barlow', sans-serif; font-size: 13.5px; color: var(--ink);
-    background: #fff; border: 1.5px solid var(--rule);
-    padding: 10px 13px; outline: none; border-radius: 2px;
-    width: 100%; -webkit-appearance: none; transition: border-color 0.15s;
+  .masthead p{
+    margin-top:16px;
+    font-size:14px;
+    line-height:1.6;
+    color:rgba(255,255,255,.68);
+    max-width:44ch;
   }
-  .field textarea { resize: vertical; min-height: 80px; line-height: 1.5; }
-  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--teal); }
-  .field input.err, .field select.err { border-color: var(--rust); }
-  .err-msg { font-size: 11px; color: var(--rust); display: none; }
-  .err-msg.on { display: block; }
-  .field select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6058' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 13px center;
-    padding-right: 36px; cursor: pointer;
+
+  /* ---------- Form ---------- */
+  .body{padding:32px 36px 36px}
+  .intro{
+    font-size:15px;
+    color:var(--grey-dark);
+    margin-bottom:28px;
+    line-height:1.6;
   }
-  .check-wrap { display: flex; gap: 10px; align-items: flex-start; }
-  .check-wrap input[type="checkbox"] {
-    width: 16px; height: 16px; min-width: 16px;
-    margin-top: 2px; accent-color: var(--teal); cursor: pointer;
+  .field{margin-bottom:20px}
+  label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--black);
+    margin-bottom:7px;
   }
-  .check-wrap label { font-size: 12px; line-height: 1.5; color: var(--muted); cursor: pointer; }
-  .submit-area { padding: 0 36px 32px; }
-  .btn {
-    width: 100%; padding: 14px; background: var(--teal); color: #fff;
-    border: none; font-family: 'Barlow Condensed', sans-serif;
-    font-size: 14px; font-weight: 700; letter-spacing: 0.18em;
-    text-transform: uppercase; cursor: pointer; border-radius: 2px;
-    transition: background 0.15s;
+  label .opt{
+    font-weight:400;
+    letter-spacing:.04em;
+    text-transform:none;
+    color:var(--grey);
+    font-size:12px;
   }
-  .btn:hover { background: var(--teal-deep); }
-  .btn:disabled { background: var(--soft); cursor: not-allowed; }
-  .form-note {
-    text-align: center; margin-top: 12px;
-    font-size: 11.5px; color: var(--soft); line-height: 1.5;
+  input{
+    width:100%;
+    font-family:inherit;
+    font-size:16px;
+    color:var(--black);
+    background:var(--white);
+    border:1px solid var(--grey-line);
+    border-radius:var(--radius);
+    padding:12px 13px;
+    transition:border-color .15s ease, box-shadow .15s ease;
   }
-  .footer {
-    padding: 14px 36px; border-top: 1px solid var(--rule);
-    display: flex; justify-content: space-between; align-items: center;
+  input::placeholder{color:#B0B0B0}
+  input:hover{border-color:var(--grey)}
+  input:focus{
+    outline:none;
+    border-color:var(--black);
+    box-shadow:inset 0 -2px 0 0 var(--black);
   }
-  .footer .brand {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 10.5px;
-    font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal);
+  input:focus-visible{outline:none}
+  .row{display:grid;grid-template-columns:1.4fr 1fr;gap:14px}
+  @media (max-width:460px){.row{grid-template-columns:1fr;gap:0}.row .field{margin-bottom:20px}}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+
+  button{
+    width:100%;
+    font-family:inherit;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:var(--white);
+    background:var(--black);
+    border:1px solid var(--black);
+    border-radius:var(--radius);
+    padding:16px;
+    cursor:pointer;
+    margin-top:8px;
+    transition:background .15s ease, color .15s ease;
   }
-  .footer .brand span {
-    display: block; font-size: 9px; font-weight: 400;
-    letter-spacing: 0.1em; color: var(--soft); margin-top: 2px;
+  button:hover{background:var(--white);color:var(--black)}
+  button:focus-visible{outline:2px solid var(--black);outline-offset:2px}
+  button[disabled]{opacity:.45;cursor:default}
+  button[disabled]:hover{background:var(--black);color:var(--white)}
+
+  .note{
+    margin-top:18px;
+    font-size:12.5px;
+    line-height:1.55;
+    color:var(--grey);
+    text-align:center;
   }
-  .footer .site { font-size: 11px; color: var(--soft); }
-  #fw { display: flex; flex-direction: column; flex: 1; }
+  .error{
+    display:none;
+    margin-top:16px;
+    font-size:13.5px;
+    color:var(--black);
+    border-left:2px solid var(--black);
+    padding-left:12px;
+  }
+  .error.show{display:block}
+
+  /* ---------- Confirmation ---------- */
+  .done{display:none;padding:56px 36px;text-align:center}
+  .done.show{display:block}
+  .done .mark{
+    width:44px;height:44px;
+    margin:0 auto 22px;
+    border:1px solid var(--black);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .done .mark svg{width:18px;height:18px;stroke:var(--black);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+  .done h2{
+    font-family:var(--display);
+    font-size:30px;
+    font-weight:500;
+    margin-bottom:12px;
+  }
+  .done p{font-size:14.5px;color:var(--grey-dark);max-width:38ch;margin:0 auto;line-height:1.6}
+  .again{
+    margin-top:28px;
+    background:var(--white);
+    border:1px solid var(--grey-line);
+    color:var(--black);
+    width:auto;
+    padding:12px 26px;
+    display:inline-block;
+  }
+  .again:hover{background:var(--black);color:var(--white);border-color:var(--black)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
-<div class="card">
 
-  <div class="header">
-    <div class="header-logos">
-      <img src="logo-soe.png" class="logo-soe" alt="Season of Emancipation">
-      <img src="logo-road.png" class="logo-road" alt="R.O.A.D. Programme">
-    </div>
-   <div class="header-label">R.O.A.D. Programme<br>Heritage Month 2026</div>
-    <h1>Atlantic <span>Stories</span></h1>
-    <div class="subtitle">A Digital Archive Experience · Register to Attend</div>
-    <div class="pills">
-      <div class="pill">30 June 2026</div>
-      <div class="pill">6:00 – 9:00 PM</div>
-      <div class="pill">Barbados Archives Department</div>
-    </div>
-  </div>
+<main class="card">
+  <header class="masthead">
+    <div class="eyebrow">UNCF UNITE 2026 &nbsp;·&nbsp; Atlanta</div>
+    <div class="rule"></div>
+    <img src="assets/road-logo-negative.png" alt="R.O.A.D." class="logo">
+    <h1 class="session">Reclaiming Our Atlantic Destiny</h1>
+    <p>A Barbados-led transformative initiative safeguarding and giving voice to the archival record of the Atlantic world.</p>
+  </header>
 
-  <div id="fw">
-    <form id="frm" novalidate action="https://formspree.io/f/xbdekjkk" method="POST">
-      <input type="hidden" name="_subject" value="Atlantic Stories Registration">
+  <!-- FORM -->
+  <section class="body" id="formPanel">
+    <p class="intro">Leave your details and we will share programme updates, session materials and ways to stay involved.</p>
 
-      <div class="body">
-
-        <div class="section">
-          <div class="sec-label">Your details</div>
-          <div class="row two">
-            <div class="field">
-              <label for="fn">First name</label>
-              <input type="text" id="fn" name="first_name" placeholder="First name" autocomplete="given-name">
-              <span class="err-msg" id="e-fn">Please enter your first name.</span>
-            </div>
-            <div class="field">
-              <label for="ln">Last name</label>
-              <input type="text" id="ln" name="last_name" placeholder="Last name" autocomplete="family-name">
-              <span class="err-msg" id="e-ln">Please enter your last name.</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="field">
-              <label for="em">Email address</label>
-              <input type="email" id="em" name="email" placeholder="you@example.com" autocomplete="email">
-              <span class="err-msg" id="e-em">Please enter a valid email address.</span>
-            </div>
-          </div>
-          <div class="row">
-            <div class="field">
-              <label for="aff">Organisation or affiliation <span class="opt">(optional)</span></label>
-              <input type="text" id="aff" name="organisation">
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="sec-label">About your interest</div>
-          <div class="row">
-            <div class="field">
-              <label for="src">How did you hear about Atlantic Stories? <span class="opt">(optional)</span></label>
-              <select id="src" name="how_you_heard">
-                <option value="" disabled selected>Select one</option>
-                <option>Social media</option>
-                <option>Email / newsletter</option>
-                <option>Word of mouth</option>
-                <option>Press / media</option>
-                <option>R.O.A.D. website</option>
-                <option>Other</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="field">
-              <label for="why">Briefly tell us why you would like to attend <span class="opt">(optional)</span></label>
-              <textarea id="why" name="reason_for_attending" rows="3"></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="check-wrap">
-            <input type="checkbox" id="con" name="consent" value="yes">
-            <label for="con">I agree to be contacted by the R.O.A.D. Programme regarding my registration. My information will be used in accordance with applicable privacy regulations.</label>
-          </div>
-          <div class="err-msg" id="e-con" style="margin-top:6px;">Please confirm your consent to proceed.</div>
-        </div>
-
+    <form id="captureForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <div class="field">
+        <label for="name">First and last name</label>
+        <input id="name" name="Name" type="text" autocomplete="name" required placeholder="Jane Alleyne">
       </div>
 
-      <div class="submit-area">
-        <button type="submit" class="btn" id="sbtn">Submit registration</button>
-        <div class="form-note">-</div>
+      <div class="field">
+        <label for="org">Organisation</label>
+        <input id="org" name="Organisation" type="text" autocomplete="organization" required placeholder="Institution, company or university">
       </div>
+
+      <div class="field">
+        <label for="title">Title</label>
+        <input id="title" name="Title" type="text" autocomplete="organization-title" required placeholder="Director of Advancement">
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="Email" type="email" autocomplete="email" inputmode="email" required placeholder="jane@example.org">
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="city">City</label>
+          <input id="city" name="City" type="text" autocomplete="address-level2" required placeholder="Atlanta">
+        </div>
+        <div class="field">
+          <label for="state">State</label>
+          <input id="state" name="State" type="text" autocomplete="address-level1" required placeholder="GA">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone number <span class="opt">— optional</span></label>
+        <input id="phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+1 555 000 0000">
+      </div>
+
+      <!-- Spam trap -->
+      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="_subject" value="R.O.A.D. — UNITE 2026 contact capture">
+      <input type="hidden" name="Source" value="UNITE 2026 Exhibition — Atlanta">
+
+      <button type="submit" id="submitBtn">Stay connected</button>
+      <div class="error" id="errorMsg" role="alert"></div>
+      <p class="note">We use these details only to contact you about the R.O.A.D. Programme.</p>
     </form>
-  </div>
+  </section>
 
-  <div class="footer">
-    <div class="brand">R.O.A.D. Programme<span>Reclaiming Our Atlantic Destiny</span></div>
-    <div class="site">road.bb</div>
-  </div>
-</div>
+  <!-- CONFIRMATION -->
+  <section class="done" id="donePanel" aria-live="polite">
+    <div class="mark"><svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"></polyline></svg></div>
+    <h2>Thank you</h2>
+    <p>Your details are with us. We will be in touch after the conference.</p>
+    <button class="again" id="againBtn" type="button">Add another contact</button>
+  </section>
+</main>
 
 <script>
-  const frm = document.getElementById('frm');
-  const sbtn = document.getElementById('sbtn');
-  function v(id) { return document.getElementById(id).value.trim(); }
-  function setErr(id, on) {
-    const e = document.getElementById('e-' + id);
-    const f = document.getElementById(id);
-    if (e) e.classList.toggle('on', on);
-    if (f) f.classList.toggle('err', on);
+(function(){
+  var form = document.getElementById('captureForm');
+  var formPanel = document.getElementById('formPanel');
+  var donePanel = document.getElementById('donePanel');
+  var btn = document.getElementById('submitBtn');
+  var err = document.getElementById('errorMsg');
+  var again = document.getElementById('againBtn');
+  var resetTimer;
+
+  function showError(msg){ err.textContent = msg; err.classList.add('show'); }
+  function clearError(){ err.classList.remove('show'); }
+
+  function reset(){
+    clearTimeout(resetTimer);
+    form.reset();
+    clearError();
+    btn.disabled = false;
+    btn.textContent = 'Stay connected';
+    donePanel.classList.remove('show');
+    formPanel.style.display = '';
+    document.getElementById('name').focus();
   }
-  ['fn','ln','em'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('input', () => setErr(id, false));
+
+  again.addEventListener('click', reset);
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    clearError();
+
+    if(!form.checkValidity()){
+      var bad = form.querySelector(':invalid');
+      showError('Please complete the highlighted fields before sending.');
+      if(bad) bad.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res){
+      if(res.ok){
+        formPanel.style.display = 'none';
+        donePanel.classList.add('show');
+        again.focus();
+        resetTimer = setTimeout(reset, 6000);
+      } else {
+        return res.json().then(function(d){
+          throw new Error('fail');
+        });
+      }
+    })
+    .catch(function(){
+      btn.disabled = false;
+      btn.textContent = 'Stay connected';
+      showError('That did not send. Check your connection and try again.');
+    });
   });
-  document.getElementById('con').addEventListener('change', () =>
-    document.getElementById('e-con').classList.remove('on')
-  );
-  frm.addEventListener('submit', function(e) {
-    let ok = true;
-    if (!v('fn')) { setErr('fn', true); ok = false; } else setErr('fn', false);
-    if (!v('ln')) { setErr('ln', true); ok = false; } else setErr('ln', false);
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('em'))) { setErr('em', true); ok = false; } else setErr('em', false);
-    if (!document.getElementById('con').checked) {
-      document.getElementById('e-con').classList.add('on'); ok = false;
-    } else { document.getElementById('e-con').classList.remove('on'); }
-    if (!ok) { e.preventDefault(); return; }
-    sbtn.disabled = true;
-    sbtn.textContent = 'Submitting…';
-  });
+})();
 </script>
 </body>
 </html>
